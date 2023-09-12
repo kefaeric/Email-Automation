@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Challenge__2_Extract_the_email_address_from_a_string__using_RegEx_" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="926,1361" sap2010:WorkflowViewState.IdRef="Challenge__2_Extract_the_email_address_from_a_string__using_RegEx__1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Challenge__2_Extract_the_email_address_from_a_string__using_RegEx_" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="562,1382.6666666666667" sap2010:WorkflowViewState.IdRef="Challenge__2_Extract_the_email_address_from_a_string__using_RegEx__1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ss="clr-namespace:System.Security;assembly=System.Private.CoreLib" xmlns:str="clr-namespace:System.Text.RegularExpressions;assembly=System.Text.RegularExpressions" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -93,10 +93,14 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Extractthe email address_from a string using RegEx" sap:VirtualizedContainerService.HintSize="572,1296" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Extractthe email address_from a string using RegEx" sap:VirtualizedContainerService.HintSize="572,1318" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="Email" />
-      <Variable x:TypeArguments="x:String" Default="Kefa email kefaeric@gmail.com is parto of kemwenda@safaricom.co.ke" Name="Collection" />
+      <Variable x:TypeArguments="x:String" Name="Collection">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">Kefa email kefaeric@gmail.com is part of kemwenda@safaricom.co.ke and kefa.mwenda@student.moringaschool.com</Literal>
+        </Variable.Default>
+      </Variable>
       <Variable x:TypeArguments="scg:IEnumerable(str:Match)" Name="EmailExtracted" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
@@ -105,15 +109,15 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:Matches FirstMatch="{x:Null}" BuilderPattern="([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\.]+)\b" DisplayName="Find Matching Patterns" sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="Matches_1" Input="[Collection]" IsBuilderTabModified="True" Model="[{&quot;Index&quot;:0,&quot;OperationID&quot;:&quot;ADV&quot;,&quot;OperationName&quot;:&quot;Advanced&quot;,&quot;OperationValue&quot;:&quot;([a-zA-Z0-9_\\-\\.]+)@([a-zA-Z0-9_\\.]+)\\b&quot;,&quot;QuantifierFirstValue&quot;:&quot;1&quot;,&quot;QuantifierID&quot;:&quot;EXT&quot;,&quot;QuantifierName&quot;:&quot;Exactly&quot;,&quot;QuantifierSecondValue&quot;:null}]" Pattern="([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\.]+)\b" RegexOption="IgnoreCase, Compiled" Result="[EmailExtracted]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Collection]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[EmailExtracted.ToString]" />
-    <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="510,723" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[EmailExtracted]">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[Collection]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[EmailExtracted.ToString]" />
+    <ui:ForEach x:TypeArguments="str:Match" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="510,738" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[EmailExtracted]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="str:Match">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="str:Match" Name="currentItem" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,537" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="476,548" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="FinalEmail" />
               <Variable x:TypeArguments="x:String" Name="UserName" />
@@ -124,7 +128,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign sap:VirtualizedContainerService.HintSize="434,85.33333333333333" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[FinalEmail]</OutArgument>
               </Assign.To>
@@ -132,8 +136,8 @@
                 <InArgument x:TypeArguments="x:String">[currentItem.ToString]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[FinalEmail]" />
-            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" Body=" email address was extracted successful" DisplayName="Send SMTP Mail Message" Email="kefa.mwenda@student.moringaschool.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,146" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="True" Password="cpebbjflvbwjdjkw" Port="587" ReplyTo="[UserName]" SecureConnection="StartTls" Server="smtp.gmail.com" Subject="Testing Email Automation" TimeoutMS="60000" To="[FinalEmail]" UseOAuth="True">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,144.66666666666666" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[FinalEmail]" />
+            <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" ContinueOnError="{x:Null}" From="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" Result="{x:Null}" SecurePassword="{x:Null}" Body=" email address was extracted successful" DisplayName="Send SMTP Mail Message" Email="kefa.mwenda@student.moringaschool.com" EnableSSL="True" sap:VirtualizedContainerService.HintSize="434,150.66666666666666" sap2010:WorkflowViewState.IdRef="SendMail_2" IgnoreCRL="False" IsBodyHtml="True" Password="cpebbjflvbwjdjkw" Port="587" ReplyTo="[UserName]" SecureConnection="StartTls" Server="smtp.gmail.com" Subject="Testing Email Automation" TimeoutMS="60000" To="[FinalEmail]" UseOAuth="True">
               <ui:SendMail.Files>
                 <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4" />
               </ui:SendMail.Files>
