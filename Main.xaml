@@ -91,7 +91,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="434,246" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Please enter a sentence which includes one email address" Title="Sentence from user">
+    <ui:InputDialog Options="{x:Null}" OptionsString="{x:Null}" DisplayName="Input Dialog" sap:VirtualizedContainerService.HintSize="334,246" sap2010:WorkflowViewState.IdRef="InputDialog_2" IsPassword="False" Label="Please enter a sentence which includes one email address" Title="Sentence from user">
       <ui:InputDialog.Result>
         <OutArgument x:TypeArguments="x:String">[Response]</OutArgument>
       </ui:InputDialog.Result>
